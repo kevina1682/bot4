@@ -142,7 +142,7 @@ def SEND_MESSAGE(op):
                 if msg.text == "open":
                     group = client.getGroup(msg.to)
                     if group.preventJoinByTicket == False:
-                        sendMessage(msg.to, "already open")
+                        sendMessage(msg.to, "開放中喔(*´･ω･*)")
                     else:
                         group.preventJoinByTicket = False
                         client.updateGroup(group)
@@ -150,7 +150,7 @@ def SEND_MESSAGE(op):
                 if msg.text == "close":
                     group = client.getGroup(msg.to)
                     if group.preventJoinByTicket == True:
-                        sendMessage(msg.to, "already close")
+                        sendMessage(msg.to, "關閉中喔(*´･ω･*)")
                     else:
                         group.preventJoinByTicket = True
                         client.updateGroup(group)
@@ -176,11 +176,11 @@ def SEND_MESSAGE(op):
                 if msg.text == "Cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
-                        sendMessage(op.message.to, "No one is inviting.")
+                        sendMessage(op.message.to, "咦? 沒有人被邀請")
                     else:
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
-                        sendMessage(msg.to, "取消了" str(len(group.invitee)) + " 人")
+                        sendMessage(msg.to, "已取消了" str(len(group.invitee)) + "人")
                 if "invite:" in msg.text:
                     key = msg.text[-33:]
                     client.findAndAddContactsByMid(key)
