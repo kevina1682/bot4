@@ -1,0 +1,25 @@
+vodkabot3-1.py 
+---------------------------
+2017/10/27
+新增Tagall
+---------------------------
+bug
+ginfo
+global name 'group' is not defined
+Tagall
+local variable 'nana' referenced before assignment
+---------------------------
+11/10
+---------------------------
+Read抓到了(*′△`)\n看到訊息者 %s\n
+Cancel(msg.to, "已取消了" str(len(group.invitee)) + "人")
+if msg.contentType == 13:sendMessage(msg.to, "你的Line用戶識別碼:" + msg.contentMetadata["mid"])
+post URL
+----------------------------------
+11/11
+----------------------------------
+名稱 mid 個性簽名 頭貼網址 主頁照片網址
+感謝您將本帳設為好友(*’?ω?*)
+------------------------------------
+bug
+'LineClient' object has no attribute 'channel'
